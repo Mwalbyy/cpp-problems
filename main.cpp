@@ -1,25 +1,25 @@
 // 1.
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
 
-int main(){
+// int main(){
 
-    int base, height, area;
+//     int base, height, area;
 
-    cout << "What is the base of the triangle?\n";
-    cin >> base;
+//     cout << "What is the base of the triangle?\n";
+//     cin >> base;
     
-    cout << "What is the height of the triangle?\n";
-    cin >> height;
+//     cout << "What is the height of the triangle?\n";
+//     cin >> height;
 
-    area = .5 * base * height;
+//     area = .5 * base * height;
 
-    cout << "The area of the triangle is " << area << endl;
-    return 0;
+//     cout << "The area of the triangle is " << area << endl;
+//     return 0;
     
-}
+// }
 
 // ------------------------------------------------------------------------------------
 // 2.
@@ -73,3 +73,55 @@ int main(){
 //     return 0;
     
 // }
+
+//  ------------------------------------------------------------------------------------
+// 4.
+// #include<iostream>
+// using namespace std;
+
+
+// int main(){
+
+//     float semOne, semTwo, semThr, final, avg;
+
+//     cout << "Please tell me your test scores from semesters 1-3\n";
+//     cin >> semOne;
+//     cin >> semTwo;
+//     cin >> semThr;
+
+//     cout << "Please tell me your test score for your final exam\n";
+//     cin >> final;
+
+//     avg = (semOne + semTwo + semThr + (final * 2)) / 5;
+
+//     cout << "Your average score for the year is " << avg << "%\n";
+
+//     return 0;
+// }
+
+//  ------------------------------------------------------------------------------------
+// 5.
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+
+    float cost, totalCost, taxRate;
+    int quantity;
+
+    cout << "How much does the item you are buying cost?\n";
+    cin >> cost;
+
+    cout << "How many of this item are you purchasing?\n";
+    cin >> quantity;
+
+    taxRate = 1.06;
+
+    totalCost = (cost * quantity) * taxRate;
+
+    cout << "Your total cost including tax is $" << totalCost;
+
+    return 0;
+}
