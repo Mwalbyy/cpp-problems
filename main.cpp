@@ -124,24 +124,62 @@
 //  ------------------------------------------------------------------------------------
 // 6.
 
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+
+//     int intX, intY, answer;
+//     string result;
+
+//     cout << "please enter two numbers you would like to divide\n";
+//     cin >> intX;
+//     cin >> intY;
+
+//     if (intY == 0){cout << "Unable to perform the division";}
+   
+//         answer = intX / intY;
+
+//         cout << "your answer is: " << answer;
+   
+//     return 0;
+// }
+//  ------------------------------------------------------------------------------------
+// Chapter 2. HW 
+//  ------------------------------------------------------------------------------------
+// 1.
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+
+//     int valueOne = 50, valueTwo = 100, total;
+
+//     total = valueOne + valueTwo;
+
+//     cout << total;
+
+//     return 0;
+
+// }
+
+//  ------------------------------------------------------------------------------------
+// 2.
 #include <iostream>
 using namespace std;
 
 int main()
 {
 
-    int intX, intY, answer;
-    string result;
+    int gallons = 16, miles = 312, mpg;
 
-    cout << "please enter two numbers you would like to divide\n";
-    cin >> intX;
-    cin >> intY;
+    mpg = miles / gallons;
 
-    if (intY == 0){cout << "Unable to perform the division";}
-   
-        answer = intX / intY;
+    cout << "your car gets " << mpg << " miles per gallon";
 
-        cout << "your answer is: " << answer;
-   
     return 0;
+
 }
+
