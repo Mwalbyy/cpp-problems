@@ -1,3 +1,35 @@
+/////////////////////////////////////////////////////////////////////////////////////////
+// TEST
+/////////////////////////////////////////////////////////////////////////////////////////
+
+// #include <iostream>
+// #include <cmath>
+// using namespace std;
+
+// int main()
+// {
+
+//     double
+//         mealCharge = 44.50,
+//         taxPercentage = .0675,
+//         taxTotal,
+//         tipPercentage = .15,
+//         tipTotal,
+//         totalBill;
+
+//     taxTotal = mealCharge * taxPercentage;
+
+//     tipTotal = (taxTotal + mealCharge) * tipPercentage;
+
+//     totalBill = mealCharge + taxTotal + tipTotal;
+
+//     cout << "your meal was $" << mealCharge << ", was taxed $" << taxTotal
+//          << ", and included tip $" << tipTotal << ". bringing your total cost to $" << totalBill;
+// }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// TEST
+/////////////////////////////////////////////////////////////////////////////////////////
 // 1.
 
 // #include<iostream>
@@ -28,23 +60,23 @@
 
 // int main(){
 
-//     int bal,  finalBal, interestEarned ;
-//     float rate;
+// int bal,  finalBal, interestEarned ;
+// float rate;
 
-//     cout << "What is your starting balance?\n";
-//     cin >> bal;
+// cout << "What is your starting balance?\n";
+// cin >> bal;
 
-//     cout << "What is your annual interest rate?\n";
-//     cin >> rate;
+// cout << "What is your annual interest rate?\n";
+// cin >> rate;
 
-//     finalBal = bal * (rate / 100 + 1);
+// finalBal = bal * (rate / 100 + 1);
 
-//     interestEarned = finalBal - bal;
+// interestEarned = finalBal - bal;
 
-//     cout << "after 1 year, you will have $" << finalBal << endl;
+// cout << "after 1 year, you will have $" << finalBal << endl;
 
-//     cout << "this means that you netted $" << interestEarned << " from interest";
-//     return 0;
+// cout << "this means that you netted $" << interestEarned << " from interest";
+// return 0;
 
 // }
 // ------------------------------------------------------------------------------------
@@ -103,22 +135,22 @@
 
 // int main(){
 
-//     float cost, totalCost, taxRate;
-//     int quantity;
+// float cost, totalCost, taxRate;
+// int quantity;
 
-//     cout << "How much does the item you are buying cost?\n";
-//     cin >> cost;
+// cout << "How much does the item you are buying cost?\n";
+// cin >> cost;
 
-//     cout << "How many of this item are you purchasing?\n";
-//     cin >> quantity;
+// cout << "How many of this item are you purchasing?\n";
+// cin >> quantity;
 
-//     taxRate = 1.06;
+// taxRate = 1.06;
 
-//     totalCost = (cost * quantity) * taxRate;
+// totalCost = (cost * quantity) * taxRate;
 
-//     cout << "Your total cost including tax is $" << totalCost;
+// cout << "Your total cost including tax is $" << totalCost;
 
-//     return 0;
+// return 0;
 // }
 
 //  ------------------------------------------------------------------------------------
@@ -138,15 +170,15 @@
 //     cin >> intY;
 
 //     if (intY == 0){cout << "Unable to perform the division";}
-   
+
 //         answer = intX / intY;
 
 //         cout << "your answer is: " << answer;
-   
+
 //     return 0;
 // }
 //  ------------------------------------------------------------------------------------
-// Chapter 2. HW 
+// Chapter 2. HW
 //  ------------------------------------------------------------------------------------
 // 1.
 // #include <iostream>
@@ -167,19 +199,172 @@
 
 //  ------------------------------------------------------------------------------------
 // 2.
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+
+//     int gallons = 16, miles = 312, mpg;
+
+//     mpg = miles / gallons;
+
+//     cout << "your car gets " << mpg << " miles per gallon";
+
+//     return 0;
+
+// }
+
+//  ------------------------------------------------------------------------------------
+// 2.
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+
+//     double pantPrice = 103.45, pantQuantity, shirtPrice = 54.32, shirtQuantity,
+//            hatPrice = 34.56, hatQuantity, tax = 1.0725, total, taxTotal,
+//            grandTotal;
+
+//     cout << "How many pants did you sell this week?\n";
+//     cin >> pantQuantity;
+
+//     cout << "How many shirts did you sell this week?\n";
+//     cin >> shirtQuantity;
+
+//     cout << "How many hats did you sell this week?\n";
+//     cin >> hatQuantity;
+
+//     total = (pantPrice * pantQuantity) + (shirtPrice * shirtQuantity) +
+//             (hatPrice * hatQuantity);
+
+//     grandTotal = total * tax;
+
+//     taxTotal = grandTotal - total;
+
+//     cout << "Carson clothing company sold $" << total
+//          << " worth of clothes before tax,\n"
+//          << "$" << taxTotal << " in tax dollars, bringing the grand total too $"
+//          << grandTotal;
+
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// #include <cstring>
+// #include <string>
+// using namespace std;
+
+// int main() {
+
+//   char 
+//   fNameOne[30],
+//   lNameOne[30],
+//   fNameTwo[30],
+//   lNameTwo[30],
+//   fNameThr[30],
+//   lNameThr[30]
+//   ;
+  
+//   int
+//   hitsOne,
+//   hitsTwo,
+//   hitsThr,
+//   totalHits
+//   ;
+  
+//   double 
+//   appearancesOne,
+//   appearancesTwo,
+//   appearancesThr,
+//   avgOne,
+//   avgTwo,
+//   avgThr,
+//   totalAppearances,
+//   totalAvg
+//   ;
+
+//   cout << "enter batter 1's first name :\n";
+//   cin >> fNameOne;
+  
+//   cout << "enter batter 1's Last name :\n";
+//   cin >> lNameOne;
+  
+//   cout << "How many appearances did batter 1 have? :\n";
+//   cin >> appearancesOne;
+  
+//   cout << "How many hits did batter 1 have? :\n";
+//   cin >> hitsOne;
+  
+//   cout << "enter batter 2's first name :\n";
+//   cin >> fNameTwo;
+  
+//   cout << "enter batter 2's Last name :\n";
+//   cin >> lNameTwo;
+  
+//   cout << "How many appearances did batter 2 have? :\n";
+//   cin >> appearancesTwo;
+  
+//   cout << "How many hits did batter 2 have? :\n";
+//   cin >> hitsTwo;
+  
+//   cout << "enter batter 3's first name :\n";
+//   cin >> fNameThr;
+  
+//   cout << "enter batter 3's Last name :\n";
+//   cin >> lNameThr;
+
+//   cout << "How many appearances did batter 3 have? :\n";
+//   cin >> appearancesThr;
+  
+//   cout << "How many hits did batter 3 have? :\n";
+//   cin >> hitsThr;
+  
+//   strcat(fNameOne, " ");
+//   strcat(fNameTwo, " ");
+//   strcat(fNameThr, " ");
+  
+//   avgOne =  static_cast<double>(hitsOne) / appearancesOne;
+//   avgTwo =  static_cast<double>(hitsTwo) / appearancesTwo;
+//   avgThr =  static_cast<double>(hitsThr) / appearancesThr;
+
+//   totalHits = hitsOne + hitsTwo + hitsThr;
+  
+//   totalAppearances = appearancesOne + appearancesTwo + appearancesThr;
+
+//   totalAvg = static_cast<double>(totalHits) / totalAppearances;
+
+//   cout << "the averages of each player are as follows :\n";
+//   cout << strcat(fNameOne,lNameOne) << " had a batting average of " << setprecision(3) << avgOne <<".\n";
+//   cout << strcat(fNameTwo,lNameTwo) << " had a batting average of " << setprecision(3) << avgTwo <<".\n";
+//   cout << strcat(fNameThr,lNameThr) << " had a batting average of " << setprecision(3) << avgThr <<".\n";
+
+//   cout << "between the three players there were a combined " << setprecision(9) << totalHits << " hits and " << totalAppearances << " appearances. "
+//        << "this makes the batting average between the three players :" << setprecision(3) << totalAvg;
+  
+//   return 0;
+// }
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
+    int books;
+    int months;
+    double perMonth;
 
-    int gallons = 16, miles = 312, mpg;
+    cout << "hi";
+    cin >> books;
+    
+    cout << "hi";
+    cin >> months;
 
-    mpg = miles / gallons;
+    perMonth = books / months;
 
-    cout << "your car gets " << mpg << " miles per gallon";
+    cout << "check" << perMonth;
 
     return 0;
 
 }
-
