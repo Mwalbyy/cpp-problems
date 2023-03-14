@@ -252,6 +252,8 @@
 //     return 0;
 // }
 
+// =====================================================================================
+
 // #include <iostream>
 // #include <iomanip>
 // #include <cstring>
@@ -260,7 +262,7 @@
 
 // int main() {
 
-//   char 
+//   char
 //   fNameOne[30],
 //   lNameOne[30],
 //   fNameTwo[30],
@@ -268,15 +270,15 @@
 //   fNameThr[30],
 //   lNameThr[30]
 //   ;
-  
+
 //   int
 //   hitsOne,
 //   hitsTwo,
 //   hitsThr,
 //   totalHits
 //   ;
-  
-//   double 
+
+//   double
 //   appearancesOne,
 //   appearancesTwo,
 //   appearancesThr,
@@ -289,82 +291,268 @@
 
 //   cout << "enter batter 1's first name :\n";
 //   cin >> fNameOne;
-  
+
 //   cout << "enter batter 1's Last name :\n";
 //   cin >> lNameOne;
-  
+
 //   cout << "How many appearances did batter 1 have? :\n";
 //   cin >> appearancesOne;
-  
+
 //   cout << "How many hits did batter 1 have? :\n";
 //   cin >> hitsOne;
-  
+
 //   cout << "enter batter 2's first name :\n";
 //   cin >> fNameTwo;
-  
+
 //   cout << "enter batter 2's Last name :\n";
 //   cin >> lNameTwo;
-  
+
 //   cout << "How many appearances did batter 2 have? :\n";
 //   cin >> appearancesTwo;
-  
+
 //   cout << "How many hits did batter 2 have? :\n";
 //   cin >> hitsTwo;
-  
+
 //   cout << "enter batter 3's first name :\n";
 //   cin >> fNameThr;
-  
+
 //   cout << "enter batter 3's Last name :\n";
 //   cin >> lNameThr;
 
 //   cout << "How many appearances did batter 3 have? :\n";
 //   cin >> appearancesThr;
-  
+
 //   cout << "How many hits did batter 3 have? :\n";
 //   cin >> hitsThr;
-  
+
 //   strcat(fNameOne, " ");
 //   strcat(fNameTwo, " ");
 //   strcat(fNameThr, " ");
-  
+
 //   avgOne =  static_cast<double>(hitsOne) / appearancesOne;
 //   avgTwo =  static_cast<double>(hitsTwo) / appearancesTwo;
 //   avgThr =  static_cast<double>(hitsThr) / appearancesThr;
 
 //   totalHits = hitsOne + hitsTwo + hitsThr;
-  
+
 //   totalAppearances = appearancesOne + appearancesTwo + appearancesThr;
 
 //   totalAvg = static_cast<double>(totalHits) / totalAppearances;
 
-//   cout << "the averages of each player are as follows :\n";
-//   cout << strcat(fNameOne,lNameOne) << " had a batting average of " << setprecision(3) << avgOne <<".\n";
-//   cout << strcat(fNameTwo,lNameTwo) << " had a batting average of " << setprecision(3) << avgTwo <<".\n";
-//   cout << strcat(fNameThr,lNameThr) << " had a batting average of " << setprecision(3) << avgThr <<".\n";
+//   cout << "----------------------------------\n";
 
-//   cout << "between the three players there were a combined " << setprecision(9) << totalHits << " hits and " << totalAppearances << " appearances. "
-//        << "this makes the batting average between the three players :" << setprecision(3) << totalAvg;
-  
+//   cout << "the averages of each player are as follows\n"
+//        << strcat(fNameOne,lNameOne) << ": " << setprecision(3) << avgOne <<".\n"
+//        << strcat(fNameTwo,lNameTwo) << ": " << setprecision(3) << avgTwo <<".\n"
+//        << strcat(fNameThr,lNameThr) << ": " << setprecision(3) << avgThr <<".\n"
+//        ;
+
+//   cout << "----------------------------------\n";
+
+//   cout << "the combined stats of all players are as follows\n "
+//        << "total hits: "<< setprecision(9) << totalHits << "\n"
+//        << " total appearances: " << totalAppearances << "\n"
+//        << "average: " << setprecision(3) << totalAvg << "\n"
+//        ;
+
+//   cout << "----------------------------------\n";
+
 //   return 0;
 // }
+// ////////////////////////////////////////////////////////////////////////////
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int books;
+//     int months;
+//     double perMonth;
+
+//     cout << "hi";
+//     cin >> books;
+
+//     cout << "hi";
+//     cin >> months;
+
+//     perMonth = books / months;
+
+//     cout << "check" << perMonth;
+
+//     return 0;
+
+// }
+/////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <string>
 using namespace std;
 
-int main() {
-    int books;
-    int months;
-    double perMonth;
+int main()
+{
+    const double
+        TEST_WEIGHT = .6,
+        QUIZ_WEIGHT = .2,
+        HOME_WEIGHT = .1,
+        ATTENDANCE_WEIGHT = .1;
 
-    cout << "hi";
-    cin >> books;
-    
-    cout << "hi";
-    cin >> months;
+    double
+        testOne,
+        testTwo,
+        testThr,
+        quizOne,
+        quizTwo,
+        quizThr,
+        homeOne,
+        homeTwo,
+        homeThr,
+        attendance,
+        testAvg,
+        quizAvg,
+        homeAvg,
+        testScoreTotal,
+        quizScoreTotal,
+        homeScoreTotal,
+        attendanceScore,
+        testScoreWeighted,
+        quizScoreWeighted,
+        homeScoreWeighted,
+        attendanceScoreWeighted,
+        averageWeighted,
+        average;
 
-    perMonth = books / months;
+    string grade;
 
-    cout << "check" << perMonth;
+    cout << "INPUT THE TEST DATA \n";
+    cout << "Enter the grade for test 1: ";
+    cin >> testOne;
+    cout << "Enter the grade for test 2: ";
+    cin >> testTwo;
+    cout << "Enter the grade for test 3: ";
+    cin >> testThr;
 
-    return 0;
+    cout << "-------------------------------------------------------\n";
 
+    cout << "INPUT THE QUIZ DATA \n";
+    cout << "Enter the grade for quiz 1: ";
+    cin >> quizOne;
+    cout << "Enter the grade for quiz 2: ";
+    cin >> quizTwo;
+    cout << "Enter the grade for quiz 3: ";
+    cin >> quizThr;
+
+    cout << "-------------------------------------------------------\n";
+
+    cout << "INPUT THE HOMEWORK DATA \n";
+    cout << "Enter the grade for homework 1: ";
+    cin >> homeOne;
+    cout << "Enter the grade for homework 2: ";
+    cin >> homeTwo;
+    cout << "Enter the grade for homework 3: ";
+    cin >> homeThr;
+
+    cout << "-------------------------------------------------------\n";
+
+    cout << "INPUT THE ATTENDANCE DATA \n";
+    cout << "Enter the grade for attendance 1: ";
+    cin >> attendance;
+
+    cout << "-------------------------------------------------------\n";
+
+    testScoreTotal = testOne + testTwo + testThr;
+    testAvg = testScoreTotal / 3;
+    testScoreWeighted = (testScoreTotal / 3) * TEST_WEIGHT;
+
+    quizScoreTotal = quizOne + quizTwo + quizThr;
+    quizAvg = quizScoreTotal / 3;
+    quizScoreWeighted = (quizScoreTotal / 3) * QUIZ_WEIGHT;
+
+    homeScoreTotal = homeOne + homeTwo + homeThr;
+    homeAvg = homeScoreTotal / 3;
+    homeScoreWeighted = (homeScoreTotal / 3) * HOME_WEIGHT;
+
+    attendanceScoreWeighted = attendance * ATTENDANCE_WEIGHT;
+
+    average = homeScoreWeighted + testScoreWeighted + quizScoreWeighted + attendanceScoreWeighted;
+
+    if (average >= 90)
+    {
+        grade = 'A';
+    } else if (average >= 80) {
+        grade = 'B';
+    } else if (average >= 70) {
+        grade = 'C';
+    } else if (average >= 60) {
+        grade = 'D';
+    } else {grade = 'F';}
+
+    cout << "RESULTS\n";
+
+    cout << "Test Average: " << testAvg << "\n";
+    cout << "Quiz Average: " << quizAvg << "\n";
+    cout << "Homework Average: " << homeAvg << "\n";
+    cout << "Attendance Average: " << attendance << "\n";
+
+    cout << "-------------------------------------------------------\n";
+
+    cout << "GRADE CALCULATION\n";
+    cout << "\n";
+    cout << "Weighted Average: " << testScoreWeighted << " + " << quizScoreWeighted << " + " << homeScoreWeighted << " + " << attendanceScoreWeighted << " = " << average << "\n";
+    cout << "Grade Earned: " << grade;
 }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//     double
+//         taxRateTotal = 1.06,
+//         countyRate = 1.02,
+//         stateRate = 1.04,
+//         grandTotal,
+//         countyTax,
+//         stateTax,
+//         totalTax,
+//         sales;
+
+//     int year;
+
+//     char month[9];
+
+//     cout << "please enter the month and year\n";
+//     cout << "month: ";
+//     cin >> month;
+//     cout << "year: ";
+//     cin >> year;
+//     cout << "please enter the total income you made for the month: \n";
+//     cout << "\n";
+
+//     cin >> sales;
+
+//     stateTax = sales * stateRate;
+
+//     countyTax = sales * countyRate;
+
+//     totalTax = stateTax + countyTax;
+
+//     grandTotal = sales * taxRateTotal;
+
+//     cout << "Month: " << month << " " << year << "\n";
+//     cout << "\n";
+//     cout << "---------------------------------------\n";
+//     cout << "\n";
+//     cout << setw(20) << left << "Total Collected: " << setw(10) << right << "$ " << grandTotal << "\n";
+//     cout << "\n";
+//     cout << setw(20) << left << "Sales: " << setw(10) << right << "$ " << sales << "\n";
+//     cout << "\n";
+//     cout << setw(20) << left << "County Sales Tax: " << setw(10) << right << "$ " << countyTax << "\n";
+//     cout << "\n";
+//     cout << setw(20) << left << "State Sales Tax: " << setw(10) << right << "$ " << stateTax << "\n";
+//     cout << "\n";
+//     cout << setw(20) << left << "Total Sales Tax: " << setw(10) << right << "$ " << totalTax << "\n";
+
+//     return 0;
+// }
