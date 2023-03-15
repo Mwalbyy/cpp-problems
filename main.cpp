@@ -424,38 +424,47 @@ int main()
 
     string grade;
 
-    cout << "INPUT THE TEST DATA \n";
-    cout << "Enter the grade for test 1: ";
+    /* 
+    Example output shown in Moodle displays a left justified header "INPUT etc." with white space 
+    coming before it. I used the code -{setw(8) << " "}- to create the white space before showing the header.
+    just leaving a comment to explain the weird code that is probably not needed, but I used to replicate the 
+    example as best I could.
+
+    you probably just typed the example output... I've done too much to go back lol
+    */
+
+    cout << setw(8) << " " << "INPUT THE TEST DATA \n";
+    cout << setw(40) << left << "Enter the grade for test 1: ";
     cin >> testOne;
-    cout << "Enter the grade for test 2: ";
+    cout << setw(40) << left << "Enter the grade for test 2: ";
     cin >> testTwo;
-    cout << "Enter the grade for test 3: ";
+    cout << setw(40) << left << "Enter the grade for test 3: ";
     cin >> testThr;
 
     cout << "-------------------------------------------------------\n";
 
-    cout << "INPUT THE QUIZ DATA \n";
-    cout << "Enter the grade for quiz 1: ";
+    cout << setw(8) << " " << "INPUT THE QUIZ DATA \n";
+    cout << setw(40) << left << "Enter the grade for quiz 1: ";
     cin >> quizOne;
-    cout << "Enter the grade for quiz 2: ";
+    cout << setw(40) << left << "Enter the grade for quiz 2: ";
     cin >> quizTwo;
-    cout << "Enter the grade for quiz 3: ";
+    cout << setw(40) << left << "Enter the grade for quiz 3: ";
     cin >> quizThr;
 
     cout << "-------------------------------------------------------\n";
 
-    cout << "INPUT THE HOMEWORK DATA \n";
-    cout << "Enter the grade for homework 1: ";
+    cout << setw(8) << " " << "INPUT THE HOMEWORK DATA \n";
+    cout << setw(40) << left << "Enter the grade for homework 1: ";
     cin >> homeOne;
-    cout << "Enter the grade for homework 2: ";
+    cout << setw(40) << left << "Enter the grade for homework 2: ";
     cin >> homeTwo;
-    cout << "Enter the grade for homework 3: ";
+    cout << setw(40) << left << "Enter the grade for homework 3: ";
     cin >> homeThr;
 
     cout << "-------------------------------------------------------\n";
 
-    cout << "INPUT THE ATTENDANCE DATA \n";
-    cout << "Enter the grade for attendance 1: ";
+    cout << setw(8) << " " << "Input the Attendance Data \n";
+    cout << setw(40) << left << "Enter the grade for attendance 1: ";
     cin >> attendance;
 
     cout << "-------------------------------------------------------\n";
@@ -487,19 +496,19 @@ int main()
         grade = 'D';
     } else {grade = 'F';}
 
-    cout << "RESULTS\n";
+    cout << setw(25) << " " << "Results:\n";
 
-    cout << "Test Average: " << testAvg << "\n";
-    cout << "Quiz Average: " << quizAvg << "\n";
-    cout << "Homework Average: " << homeAvg << "\n";
-    cout << "Attendance Average: " << attendance << "\n";
+    cout << setw(40) << left << "Test Average: " << fixed << setprecision(2) << testAvg << "\n";
+    cout << setw(40) << left << "Quiz Average: " << quizAvg << "\n";
+    cout << setw(40) << left << "Homework Average: " << homeAvg << "\n";
+    cout << setw(40) << left << "Attendance Average: " << attendance << "\n";
 
     cout << "-------------------------------------------------------\n";
 
-    cout << "GRADE CALCULATION\n";
+    cout << setw(25) << " " << "Grade Calculation:\n";
     cout << "\n";
-    cout << "Weighted Average: " << testScoreWeighted << " + " << quizScoreWeighted << " + " << homeScoreWeighted << " + " << attendanceScoreWeighted << " = " << average << "\n";
-    cout << "Grade Earned: " << grade;
+    cout << setw(40) << left << "Weighted Average: " << testScoreWeighted << " + " << quizScoreWeighted << " + " << homeScoreWeighted << " + " << attendanceScoreWeighted << " = " << average << "\n";
+    cout << setw(40) << left << "Grade Earned: " << grade;
 }
 
 // #include <iostream>
