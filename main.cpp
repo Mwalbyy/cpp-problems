@@ -383,133 +383,124 @@
 // }
 /////////////////////////////////////////////////////////////////////////////////
 
-#include <iostream>
-#include <iomanip>
-#include <cmath>
-#include <string>
-using namespace std;
+// #include <iostream>
+// #include <iomanip>
+// #include <cmath>
+// #include <string>
+// using namespace std;
 
-int main()
-{
-    const double
-        TEST_WEIGHT = .6,
-        QUIZ_WEIGHT = .2,
-        HOME_WEIGHT = .1,
-        ATTENDANCE_WEIGHT = .1;
+// int main()
+// {
+//     const double
+//         TEST_WEIGHT = .6,
+//         QUIZ_WEIGHT = .2,
+//         HOME_WEIGHT = .1,
+//         ATTENDANCE_WEIGHT = .1;
 
-    double
-        testOne,
-        testTwo,
-        testThr,
-        quizOne,
-        quizTwo,
-        quizThr,
-        homeOne,
-        homeTwo,
-        homeThr,
-        attendance,
-        testAvg,
-        quizAvg,
-        homeAvg,
-        testScoreTotal,
-        quizScoreTotal,
-        homeScoreTotal,
-        attendanceScore,
-        testScoreWeighted,
-        quizScoreWeighted,
-        homeScoreWeighted,
-        attendanceScoreWeighted,
-        averageWeighted,
-        average;
+//     double
+//         testOne,
+//         testTwo,
+//         testThr,
+//         quizOne,
+//         quizTwo,
+//         quizThr,
+//         homeOne,
+//         homeTwo,
+//         homeThr,
+//         attendance,
+//         testAvg,
+//         quizAvg,
+//         homeAvg,
+//         testScoreTotal,
+//         quizScoreTotal,
+//         homeScoreTotal,
+//         attendanceScore,
+//         testScoreWeighted,
+//         quizScoreWeighted,
+//         homeScoreWeighted,
+//         attendanceScoreWeighted,
+//         averageWeighted,
+//         average;
 
-    string grade;
+//     string grade;
 
-    /* 
-    Example output shown in Moodle displays a left justified header "INPUT etc." with white space 
-    coming before it. I used the code -{setw(8) << " "}- to create the white space before showing the header.
-    just leaving a comment to explain the weird code that is probably not needed, but I used to replicate the 
-    example as best I could.
+//     cout << setw(8) << " " << "INPUT THE TEST DATA \n";
+//     cout << setw(40) << left << "Enter the grade for test 1: ";
+//     cin >> testOne;
+//     cout << setw(40) << left << "Enter the grade for test 2: ";
+//     cin >> testTwo;
+//     cout << setw(40) << left << "Enter the grade for test 3: ";
+//     cin >> testThr;
 
-    you probably just typed the example output... I've done too much to go back lol
-    */
+//     cout << "-------------------------------------------------------\n";
 
-    cout << setw(8) << " " << "INPUT THE TEST DATA \n";
-    cout << setw(40) << left << "Enter the grade for test 1: ";
-    cin >> testOne;
-    cout << setw(40) << left << "Enter the grade for test 2: ";
-    cin >> testTwo;
-    cout << setw(40) << left << "Enter the grade for test 3: ";
-    cin >> testThr;
+//     cout << setw(8) << " " << "INPUT THE QUIZ DATA \n";
+//     cout << setw(40) << left << "Enter the grade for quiz 1: ";
+//     cin >> quizOne;
+//     cout << setw(40) << left << "Enter the grade for quiz 2: ";
+//     cin >> quizTwo;
+//     cout << setw(40) << left << "Enter the grade for quiz 3: ";
+//     cin >> quizThr;
 
-    cout << "-------------------------------------------------------\n";
+//     cout << "-------------------------------------------------------\n";
 
-    cout << setw(8) << " " << "INPUT THE QUIZ DATA \n";
-    cout << setw(40) << left << "Enter the grade for quiz 1: ";
-    cin >> quizOne;
-    cout << setw(40) << left << "Enter the grade for quiz 2: ";
-    cin >> quizTwo;
-    cout << setw(40) << left << "Enter the grade for quiz 3: ";
-    cin >> quizThr;
+//     cout << setw(8) << " " << "INPUT THE HOMEWORK DATA \n";
+//     cout << setw(40) << left << "Enter the grade for homework 1: ";
+//     cin >> homeOne;
+//     cout << setw(40) << left << "Enter the grade for homework 2: ";
+//     cin >> homeTwo;
+//     cout << setw(40) << left << "Enter the grade for homework 3: ";
+//     cin >> homeThr;
 
-    cout << "-------------------------------------------------------\n";
+//     cout << "-------------------------------------------------------\n";
 
-    cout << setw(8) << " " << "INPUT THE HOMEWORK DATA \n";
-    cout << setw(40) << left << "Enter the grade for homework 1: ";
-    cin >> homeOne;
-    cout << setw(40) << left << "Enter the grade for homework 2: ";
-    cin >> homeTwo;
-    cout << setw(40) << left << "Enter the grade for homework 3: ";
-    cin >> homeThr;
+//     cout << setw(8) << " " << "Input the Attendance Data \n";
+//     cout << setw(40) << left << "Enter the grade for attendance 1: ";
+//     cin >> attendance;
 
-    cout << "-------------------------------------------------------\n";
+//     cout << "-------------------------------------------------------\n";
 
-    cout << setw(8) << " " << "Input the Attendance Data \n";
-    cout << setw(40) << left << "Enter the grade for attendance 1: ";
-    cin >> attendance;
+//     testScoreTotal = testOne + testTwo + testThr;
+//     testAvg = testScoreTotal / 3;
+//     testScoreWeighted = (testScoreTotal / 3) * TEST_WEIGHT;
 
-    cout << "-------------------------------------------------------\n";
+//     quizScoreTotal = quizOne + quizTwo + quizThr;
+//     quizAvg = quizScoreTotal / 3;
+//     quizScoreWeighted = (quizScoreTotal / 3) * QUIZ_WEIGHT;
 
-    testScoreTotal = testOne + testTwo + testThr;
-    testAvg = testScoreTotal / 3;
-    testScoreWeighted = (testScoreTotal / 3) * TEST_WEIGHT;
+//     homeScoreTotal = homeOne + homeTwo + homeThr;
+//     homeAvg = homeScoreTotal / 3;
+//     homeScoreWeighted = (homeScoreTotal / 3) * HOME_WEIGHT;
 
-    quizScoreTotal = quizOne + quizTwo + quizThr;
-    quizAvg = quizScoreTotal / 3;
-    quizScoreWeighted = (quizScoreTotal / 3) * QUIZ_WEIGHT;
+//     attendanceScoreWeighted = attendance * ATTENDANCE_WEIGHT;
 
-    homeScoreTotal = homeOne + homeTwo + homeThr;
-    homeAvg = homeScoreTotal / 3;
-    homeScoreWeighted = (homeScoreTotal / 3) * HOME_WEIGHT;
+//     average = homeScoreWeighted + testScoreWeighted + quizScoreWeighted + attendanceScoreWeighted;
 
-    attendanceScoreWeighted = attendance * ATTENDANCE_WEIGHT;
+//     if (average >= 90)
+//     {
+//         grade = 'A';
+//     } else if (average >= 80) {
+//         grade = 'B';
+//     } else if (average >= 70) {
+//         grade = 'C';
+//     } else if (average >= 60) {
+//         grade = 'D';
+//     } else {grade = 'F';}
 
-    average = homeScoreWeighted + testScoreWeighted + quizScoreWeighted + attendanceScoreWeighted;
+//     cout << setw(25) << " " << "Results:\n";
 
-    if (average >= 90)
-    {
-        grade = 'A';
-    } else if (average >= 80) {
-        grade = 'B';
-    } else if (average >= 70) {
-        grade = 'C';
-    } else if (average >= 60) {
-        grade = 'D';
-    } else {grade = 'F';}
+//     cout << setw(40) << left << "Test Average: " << fixed << setprecision(2) << testAvg << "\n";
+//     cout << setw(40) << left << "Quiz Average: " << quizAvg << "\n";
+//     cout << setw(40) << left << "Homework Average: " << homeAvg << "\n";
+//     cout << setw(40) << left << "Attendance Average: " << attendance << "\n";
 
-    cout << setw(25) << " " << "Results:\n";
+//     cout << "-------------------------------------------------------\n";
 
-    cout << setw(40) << left << "Test Average: " << fixed << setprecision(2) << testAvg << "\n";
-    cout << setw(40) << left << "Quiz Average: " << quizAvg << "\n";
-    cout << setw(40) << left << "Homework Average: " << homeAvg << "\n";
-    cout << setw(40) << left << "Attendance Average: " << attendance << "\n";
-
-    cout << "-------------------------------------------------------\n";
-
-    cout << setw(25) << " " << "Grade Calculation:\n";
-    cout << "\n";
-    cout << setw(40) << left << "Weighted Average: " << testScoreWeighted << " + " << quizScoreWeighted << " + " << homeScoreWeighted << " + " << attendanceScoreWeighted << " = " << average << "\n";
-    cout << setw(40) << left << "Grade Earned: " << grade;
-}
+//     cout << setw(25) << " " << "Grade Calculation:\n";
+//     cout << "\n";
+//     cout << setw(40) << left << "Weighted Average: " << testScoreWeighted << " + " << quizScoreWeighted << " + " << homeScoreWeighted << " + " << attendanceScoreWeighted << " = " << average << "\n";
+//     cout << setw(40) << left << "Grade Earned: " << grade;
+// }
 
 // #include <iostream>
 // #include <iomanip>
@@ -565,3 +556,168 @@ int main()
 
 //     return 0;
 // }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//     double
+//         lengthOne,
+//         lengthTwo,
+//         widthOne,
+//         widthTwo,
+//         areaOne,
+//         areaTwo;
+
+//     cout << "please enter the length of rectangle one: ";
+//     cin >> lengthOne;
+//     cout << "please enter the width of rectangle one: ";
+//     cin >> widthOne;
+
+//     cout << "please enter the length of rectangle two: ";
+//     cin >> lengthTwo;
+//     cout << "please enter the width of rectangle two: ";
+//     cin >> widthTwo;
+
+//     areaOne = lengthOne * widthOne;
+//     areaTwo = lengthTwo * widthTwo;
+
+//     if (areaOne == areaTwo)
+//     {
+//         cout << "The rectangles have the exact same area";
+//     }
+//     else if (areaOne > areaTwo)
+//     {
+//         cout << "Rectangle one has a greater area than rectangle two";
+//     }
+//     else
+//     {
+//         cout << "Rectangle two has a greater area than rectangle one";
+//     }
+
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+//     int booksPurchased;
+
+//     cout << "How many books did you purchase?: ";
+//     cin >> booksPurchased;
+
+//     if (booksPurchased != 0)
+//     {
+
+//         if (booksPurchased == 1)
+//         {
+//             cout << "You earned 5 points this month!";
+//         }
+//         else if (booksPurchased == 2)
+//         {
+//             cout << "You earned 15 points this month!";
+//         }
+//         else if (booksPurchased == 3)
+//         {
+//             cout << "You earned 30 points this month!";
+//         }
+//         else if (booksPurchased >= 4)
+//         {
+//             cout << "You earned 50 points this month!";
+//         }
+//     }
+//     else
+//     {
+//         cout << "purchase a book to begin earning points!";
+//     }
+
+//     return 0;
+// }
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    /*=====================
+    -----------------------
+    |Sub     |Freeze|Boil |
+    -----------------------
+    |Oxygen  |-362  |-306 |
+    -----------------------
+    |Ethyl   |-173  |172  |
+    -----------------------
+    |Water   |32    |212  |
+    -----------------------
+    |Mercury |-38   |676  |
+    -----------------------
+    ======================*/
+    int
+        temp,
+        ethylFreeze = -173,
+        ethylBoil = 172,
+        mercuryFreeze = -38,
+        mercuryBoil = 676,
+        oxygenFreeze = -362,
+        oxygenBoil = -306,
+        waterFreeze = 32,
+        waterBoil = 212;
+
+    cout << "enter a temperature in fahrenheit to check the reaction Oxygen, Ethyl alcohol, Mercury, and Water have at said temperature: ";
+    cin >> temp;
+
+    cout << "\n=====================================\n";
+
+    // checks what substances freeze at given temp
+    if (temp <= oxygenFreeze)
+    {
+        cout << "Oxygen, Ethyl alcohol, Mercury, and Water all freeze at that temperature\n";
+    }
+    else if (temp <= ethylFreeze)
+    {
+        cout << "Ethyl alcohol, Mercury, and Water all freeze at that temperature\n";
+    }
+    else if (temp <= mercuryFreeze)
+    {
+        cout << "Mercury, and Water freeze at that temperature\n";
+    }
+    else if (temp <= waterFreeze)
+    {
+        cout << "Water freezes at that temperature\n";
+    }
+    else
+    {
+        cout << "nothing listed freezes at that temperature\n";
+    }
+
+    // checks what substances freeze at given temp
+    if (temp >= mercuryBoil)
+    {
+        cout << "Oxygen, Ethyl alcohol, Mercury, and Water all boil at that temperature\n";
+    }
+    else if (temp >= waterBoil)
+    {
+        cout << "Ethyl alcohol, Oxygen, and Water all boil at that temperature\n";
+    }
+    else if (temp >= ethylBoil)
+    {
+        cout << "Ethyl alcohol, and Oxygen boil at that temperature\n";
+    }
+    else if (temp >= oxygenBoil)
+    {
+        cout << "Oxygen boils at that temperature\n";
+    }
+    else
+    {
+        cout << "nothing listed boils at that temperature\n";
+    }
+
+    cout << "=====================================";
+
+    return 0;
+}
