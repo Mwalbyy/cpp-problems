@@ -638,86 +638,194 @@
 
 //     return 0;
 // }
+// #include <iostream>
+// #include <iomanip>
+// using namespace std;
+
+// int main()
+// {
+/*=====================
+-----------------------
+|Sub     |Freeze|Boil |
+-----------------------
+|Oxygen  |-362  |-306 |
+-----------------------
+|Ethyl   |-173  |172  |
+-----------------------
+|Water   |32    |212  |
+-----------------------
+|Mercury |-38   |676  |
+-----------------------
+======================*/
+//     int
+//         temp,
+//         ethylFreeze = -173,
+//         ethylBoil = 172,
+//         mercuryFreeze = -38,
+//         mercuryBoil = 676,
+//         oxygenFreeze = -362,
+//         oxygenBoil = -306,
+//         waterFreeze = 32,
+//         waterBoil = 212;
+
+//     cout << "enter a temperature in fahrenheit to check the reaction Oxygen, Ethyl alcohol, Mercury, and Water have at said temperature: ";
+//     cin >> temp;
+
+//     cout << "\n=====================================\n";
+
+//     // checks what substances freeze at given temp
+//     if (temp <= oxygenFreeze)
+//     {
+//         cout << "Oxygen, Ethyl alcohol, Mercury, and Water all freeze at that temperature\n";
+//     }
+//     else if (temp <= ethylFreeze)
+//     {
+//         cout << "Ethyl alcohol, Mercury, and Water all freeze at that temperature\n";
+//     }
+//     else if (temp <= mercuryFreeze)
+//     {
+//         cout << "Mercury, and Water freeze at that temperature\n";
+//     }
+//     else if (temp <= waterFreeze)
+//     {
+//         cout << "Water freezes at that temperature\n";
+//     }
+//     else
+//     {
+//         cout << "nothing listed freezes at that temperature\n";
+//     }
+
+//     // checks what substances freeze at given temp
+//     if (temp >= mercuryBoil)
+//     {
+//         cout << "Oxygen, Ethyl alcohol, Mercury, and Water all boil at that temperature\n";
+//     }
+//     else if (temp >= waterBoil)
+//     {
+//         cout << "Ethyl alcohol, Oxygen, and Water all boil at that temperature\n";
+//     }
+//     else if (temp >= ethylBoil)
+//     {
+//         cout << "Ethyl alcohol, and Oxygen boil at that temperature\n";
+//     }
+//     else if (temp >= oxygenBoil)
+//     {
+//         cout << "Oxygen boils at that temperature\n";
+//     }
+//     else
+//     {
+//         cout << "nothing listed boils at that temperature\n";
+//     }
+
+//     cout << "=====================================";
+
+//     return 0;
+// }
+
 #include <iostream>
 #include <iomanip>
+#include <string>
+#include <cstring>
 using namespace std;
 
 int main()
 {
-    /*=====================
-    -----------------------
-    |Sub     |Freeze|Boil |
-    -----------------------
-    |Oxygen  |-362  |-306 |
-    -----------------------
-    |Ethyl   |-173  |172  |
-    -----------------------
-    |Water   |32    |212  |
-    -----------------------
-    |Mercury |-38   |676  |
-    -----------------------
-    ======================*/
-    int
-        temp,
-        ethylFreeze = -173,
-        ethylBoil = 172,
-        mercuryFreeze = -38,
-        mercuryBoil = 676,
-        oxygenFreeze = -362,
-        oxygenBoil = -306,
-        waterFreeze = 32,
-        waterBoil = 212;
+    const double
+        A_GIG_LIMIT = 2,
+        B_GIG_LIMIT = 8,
+        A_PLAN = 39.99,
+        B_PLAN = 59.99,
+        C_PLAN = 79.99,
+        A_GIGS = 2,
+        C_GIGS = 8,
+        GIG_COST = 8;
+    double
+        bSaved,
+        cSaved,
+        gigsUsed,
+        overCost,
+        totalCost;
 
-    cout << "enter a temperature in fahrenheit to check the reaction Oxygen, Ethyl alcohol, Mercury, and Water have at said temperature: ";
-    cin >> temp;
+    char
+        name[20],
+        plan;
 
-    cout << "\n=====================================\n";
+    cout << "Please enter your first name: ";
+    cin >> name;
 
-    // checks what substances freeze at given temp
-    if (temp <= oxygenFreeze)
+    cout << "Please enter which plan you used(A,B,C): ";
+    cin >> plan;
+
+    cout << "Please enter how many gigs of data you used: ";
+    cin >> gigsUsed;
+
+    // "!=" was not working, so I used "return 0;" to execute guard clause
+
+    if (plan == 'c' || plan == 'C')
     {
-        cout << "Oxygen, Ethyl alcohol, Mercury, and Water all freeze at that temperature\n";
+        cout << "Hi " << name << ", Your plan is $" << C_PLAN << " a month";
+        return 0;
     }
-    else if (temp <= ethylFreeze)
+
+    // If plan is not 'c' the code below will run.
+
+    if (plan == 'a' || plan == 'A')
     {
-        cout << "Ethyl alcohol, Mercury, and Water all freeze at that temperature\n";
+        // If the amount of gigs exceeds the given limit, the extra cost will be added and displayed 
+        if (gigsUsed > A_GIG_LIMIT)
+        {
+            overCost = (gigsUsed - A_GIG_LIMIT) * GIG_COST;
+            totalCost = overCost + A_PLAN;
+            cout << "Hi " << name << ", your plan cost $" << A_PLAN << " with an additional charge of $"
+                 << overCost << " bringing your total to $" << totalCost << "\n";
+            // if the extra gigs bring the total over the cost of the next plan up, the code below will show potential savings
+            if (totalCost > B_PLAN)
+            {
+                bSaved = totalCost - B_PLAN;
+                cout << "You could have saved $" << bSaved << " if you switched to B plan\n";
+                if (totalCost > C_PLAN)
+                {
+                    cSaved = totalCost - C_PLAN;
+                    cout << "You could have saved $" << cSaved << " if you switched to C plan";
+                    return 0;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        else
+        {
+            cout << "your plan is $" << A_PLAN << " a month";
+        }
     }
-    else if (temp <= mercuryFreeze)
+    else if (plan == 'b' || plan == 'B')
     {
-        cout << "Mercury, and Water freeze at that temperature\n";
-    }
-    else if (temp <= waterFreeze)
-    {
-        cout << "Water freezes at that temperature\n";
+        if (gigsUsed > B_GIG_LIMIT)
+        {
+            overCost = (gigsUsed - B_GIG_LIMIT) * GIG_COST;
+            totalCost = overCost + B_PLAN;
+            cout << "Hi " << name << ", your plan cost $" << B_PLAN << " with an additional charge of $"
+                 << overCost << " bringing your total to $" << totalCost << "\n";
+
+            if (totalCost > C_PLAN)
+            {
+                cSaved = totalCost - C_PLAN;
+                cout << "You could have saved $" << cSaved << " if you switched to C plan\n";
+            }
+        }
+        else
+        {
+            cout << "Hi " << name << ", your plan is $" << B_PLAN << " a month";
+        }
     }
     else
     {
-        cout << "nothing listed freezes at that temperature\n";
+        cout << "Please enter a valid plan name(A,B,C)";
     }
-
-    // checks what substances freeze at given temp
-    if (temp >= mercuryBoil)
-    {
-        cout << "Oxygen, Ethyl alcohol, Mercury, and Water all boil at that temperature\n";
-    }
-    else if (temp >= waterBoil)
-    {
-        cout << "Ethyl alcohol, Oxygen, and Water all boil at that temperature\n";
-    }
-    else if (temp >= ethylBoil)
-    {
-        cout << "Ethyl alcohol, and Oxygen boil at that temperature\n";
-    }
-    else if (temp >= oxygenBoil)
-    {
-        cout << "Oxygen boils at that temperature\n";
-    }
-    else
-    {
-        cout << "nothing listed boils at that temperature\n";
-    }
-
-    cout << "=====================================";
-
-    return 0;
 }
