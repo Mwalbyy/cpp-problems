@@ -722,6 +722,135 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// using namespace std;
+
+// int main()
+// {
+//     const double
+//         A_GIG_LIMIT = 2,
+//         B_GIG_LIMIT = 8,
+//         A_PLAN = 39.99,
+//         B_PLAN = 59.99,
+//         C_PLAN = 79.99,
+//         A_GIGS = 2,
+//         C_GIGS = 8,
+//         GIG_COST = 8;
+//     double
+//         bSaved,
+//         cSaved,
+//         gigsUsed,
+//         overCost,
+//         totalCost;
+
+//     char
+//         name[20],
+//         plan;
+
+//     cout << "Please enter your first name: ";
+//     cin >> name;
+
+//     cout << "Please enter which plan you used(A,B,C): ";
+//     cin >> plan;
+
+//     cout << "Please enter how many gigs of data you used: ";
+//     cin >> gigsUsed;
+
+//     // "!=" was not working, so I used "return 0;" to execute guard clause
+
+//     if (plan == 'c' || plan == 'C')
+//     {
+//         cout << "Hi " << name << ", Your plan is $" << C_PLAN << " a month";
+//         return 0;
+//     }
+
+//     // If plan is not 'c' the code below will run.
+
+//     if (plan == 'a' || plan == 'A')
+//     {
+//         // If the amount of gigs exceeds the given limit, the extra cost will be added and displayed
+//         if (gigsUsed > A_GIG_LIMIT)
+//         {
+//             overCost = (gigsUsed - A_GIG_LIMIT) * GIG_COST;
+//             totalCost = overCost + A_PLAN;
+//             cout << "Hi " << name << ", your plan cost $" << A_PLAN << " with an additional charge of $"
+//                  << overCost << " bringing your total to $" << totalCost << "\n";
+//             // if the extra gigs bring the total over the cost of the next plan up, the code below will show potential savings
+//             if (totalCost > B_PLAN)
+//             {
+//                 bSaved = totalCost - B_PLAN;
+//                 cout << fixed << setprecision(2) << "You could have saved $" << bSaved << " if you switched to B plan\n";
+//                 if (totalCost > C_PLAN)
+//                 {
+//                     cSaved = totalCost - C_PLAN;
+//                     cout << fixed << setprecision(2) << "You could have saved $" << cSaved << " if you switched to C plan";
+//                     return 0;
+//                 }
+//                 else
+//                 {
+//                     return 0;
+//                 }
+//             }
+//             else
+//             {
+//                 return 0;
+//             }
+//         }
+//         else
+//         {
+//             cout << "your plan is $" << A_PLAN << " a month";
+//         }
+//     }
+//     else if (plan == 'b' || plan == 'B')
+//     {
+//         if (gigsUsed > B_GIG_LIMIT)
+//         {
+//             overCost = (gigsUsed - B_GIG_LIMIT) * GIG_COST;
+//             totalCost = overCost + B_PLAN;
+//             cout << fixed << setprecision(2) << "Hi " << name << ", your plan cost $" << B_PLAN << " with an additional charge of $"
+//                  << overCost << " bringing your total to $" << totalCost << "\n";
+
+//             if (totalCost > C_PLAN)
+//             {
+//                 cSaved = totalCost - C_PLAN;
+//                 cout << fixed << setprecision(2) << "You could have saved $" << cSaved << " if you switched to C plan\n";
+//             }
+//         }
+//         else
+//         {
+//             cout << fixed << setprecision(2) << "Hi " << name << ", your plan is $" << B_PLAN << " a month";
+//         }
+//     }
+//     else
+//     {
+//         cout << "Please enter a valid plan name(A,B,C)";
+//     }
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// using namespace std;
+
+// int main()
+// {
+//     int index = 32;
+
+//     while (index <= 137)
+//     {
+//         cout << (char)index << " ";
+//         if (index % 16 == 0)
+//         {
+//             cout << "\n";
+//         };
+//         index++;
+//     }
+// }
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -730,102 +859,23 @@ using namespace std;
 
 int main()
 {
-    const double
-        A_GIG_LIMIT = 2,
-        B_GIG_LIMIT = 8,
-        A_PLAN = 39.99,
-        B_PLAN = 59.99,
-        C_PLAN = 79.99,
-        A_GIGS = 2,
-        C_GIGS = 8,
-        GIG_COST = 8;
-    double
-        bSaved,
-        cSaved,
-        gigsUsed,
-        overCost,
-        totalCost;
+    int randomNum,
+        userNum;
 
-    char
-        name[20],
-        plan;
+    randomNum = rand() % 100 + 1;
 
-    cout << "Please enter your first name: ";
-    cin >> name;
+    cout << "please guess a number from 1-100: \n";
+    cin >> userNum;
 
-    cout << "Please enter which plan you used(A,B,C): ";
-    cin >> plan;
-
-    cout << "Please enter how many gigs of data you used: ";
-    cin >> gigsUsed;
-
-    // "!=" was not working, so I used "return 0;" to execute guard clause
-
-    if (plan == 'c' || plan == 'C')
-    {
-        cout << "Hi " << name << ", Your plan is $" << C_PLAN << " a month";
-        return 0;
-    }
-
-    // If plan is not 'c' the code below will run.
-
-    if (plan == 'a' || plan == 'A')
-    {
-        // If the amount of gigs exceeds the given limit, the extra cost will be added and displayed 
-        if (gigsUsed > A_GIG_LIMIT)
-        {
-            overCost = (gigsUsed - A_GIG_LIMIT) * GIG_COST;
-            totalCost = overCost + A_PLAN;
-            cout << "Hi " << name << ", your plan cost $" << A_PLAN << " with an additional charge of $"
-                 << overCost << " bringing your total to $" << totalCost << "\n";
-            // if the extra gigs bring the total over the cost of the next plan up, the code below will show potential savings
-            if (totalCost > B_PLAN)
-            {
-                bSaved = totalCost - B_PLAN;
-                cout << "You could have saved $" << bSaved << " if you switched to B plan\n";
-                if (totalCost > C_PLAN)
-                {
-                    cSaved = totalCost - C_PLAN;
-                    cout << "You could have saved $" << cSaved << " if you switched to C plan";
-                    return 0;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            else
-            {
-                return 0;
-            }
-        }
-        else
-        {
-            cout << "your plan is $" << A_PLAN << " a month";
+    while(randomNum != userNum) {
+        if(randomNum > userNum) {
+            cout << "Guess Higher!\n";
+            cin >> userNum;
+        } else {
+            cout << "Guess Lower!\n";
+            cin >> userNum;
         }
     }
-    else if (plan == 'b' || plan == 'B')
-    {
-        if (gigsUsed > B_GIG_LIMIT)
-        {
-            overCost = (gigsUsed - B_GIG_LIMIT) * GIG_COST;
-            totalCost = overCost + B_PLAN;
-            cout << "Hi " << name << ", your plan cost $" << B_PLAN << " with an additional charge of $"
-                 << overCost << " bringing your total to $" << totalCost << "\n";
 
-            if (totalCost > C_PLAN)
-            {
-                cSaved = totalCost - C_PLAN;
-                cout << "You could have saved $" << cSaved << " if you switched to C plan\n";
-            }
-        }
-        else
-        {
-            cout << "Hi " << name << ", your plan is $" << B_PLAN << " a month";
-        }
-    }
-    else
-    {
-        cout << "Please enter a valid plan name(A,B,C)";
-    }
+    cout << "You guessed the correct number!";
 }
