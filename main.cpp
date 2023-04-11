@@ -851,6 +851,35 @@
 //     }
 // }
 
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// using namespace std;
+
+// int main()
+// {
+//     int randomNum,
+//         userNum;
+
+//     randomNum = rand() % 100 + 1;
+
+//     cout << "please guess a number from 1-100: \n";
+//     cin >> userNum;
+
+//     while(randomNum != userNum) {
+//         if(randomNum > userNum) {
+//             cout << "Guess Higher!\n";
+//             cin >> userNum;
+//         } else {
+//             cout << "Guess Lower!\n";
+//             cin >> userNum;
+//         }
+//     }
+
+//     cout << "You guessed the correct number!";
+// }
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -859,23 +888,59 @@ using namespace std;
 
 int main()
 {
-    int randomNum,
-        userNum;
+    double numStudents,
+        avgGrade;
 
-    randomNum = rand() % 100 + 1;
+    string grade;
 
-    cout << "please guess a number from 1-100: \n";
-    cin >> userNum;
+    cout << "Enter the number of students: ";
+    cin >> numStudents;
 
-    while(randomNum != userNum) {
-        if(randomNum > userNum) {
-            cout << "Guess Higher!\n";
-            cin >> userNum;
-        } else {
-            cout << "Guess Lower!\n";
-            cin >> userNum;
-        }
+    const int NUM_STUDENTS = numStudents;
+
+    int *gradesArray = new int[NUM_STUDENTS];
+
+    for (int i = 1; i <= NUM_STUDENTS; i++)
+    {
+        cout << "Enter the grade for student " << i << ": ";
+        cin >> gradesArray[i];
     }
 
-    cout << "You guessed the correct number!";
+    cout << "\nGrades:\n";
+
+    int sum = 0;
+
+    for (int i = 1; i <= NUM_STUDENTS; i++)
+    {
+        sum += gradesArray[i];
+        if (gradesArray[i] >= 90)
+        {
+            grade = 'A';
+        }
+        else if (gradesArray[i] >= 80)
+        {
+            grade = 'B';
+        }
+        else if (gradesArray[i] >= 70)
+        {
+            grade = 'C';
+        }
+        else if (gradesArray[i] >= 60)
+        {
+            grade = 'D';
+        }
+        else
+        {
+            grade = 'F';
+        }
+
+        cout << "Student " << i << ": " << gradesArray[i] << " (" << grade << ")\n";
+
+        if (i == NUM_STUDENTS)
+        {
+            avgGrade = sum / NUM_STUDENTS;
+            cout << "\nAverage grade: "
+                 << avgGrade;
+        }
+    }
 }
