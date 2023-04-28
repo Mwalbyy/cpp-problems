@@ -961,37 +961,196 @@
 
 // }
 
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// using namespace std;
+
+// int main()
+// {
+//     int userNum,
+//         sum = 0,
+//         condition = 0;
+
+//     cout << "Please enter a positive number: ";
+//     cin >> userNum;
+
+//     while (condition == 0)
+//     {
+
+//         if (userNum > 0)
+//         {
+//             condition++;
+//             for (int i = 0; i < userNum; i++)
+//             {
+//                 sum += i;
+//             }
+//             cout << "your sum is: " << sum;
+//         }
+//         else
+//         {
+//             cout << "Please enter a positive number: ";
+//             cin >> userNum;
+//         }
+//     }
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// using namespace std;
+
+// int main()
+// {
+//     int userNum, count = 0, arrSize;
+
+//     cout << "enter the size of your array:\n";
+//     cin >> arrSize;
+
+//     const int ARR_SIZE = arrSize;
+
+//     int *numArray = new int[ARR_SIZE];
+
+//     cout << "enter the values you want in the array:\n";
+//     for (int i = 0; i < ARR_SIZE; i++)
+//     {
+//         cin >> numArray[i];
+//     }
+
+//     cout << "please enter a number and we will check how many times it appears in an array:\n";
+//     cin >> userNum;
+
+//     for (int i = 0; i < ARR_SIZE; i++)
+//     {
+//         if (numArray[i] == userNum)
+//         {
+//             count++;
+//         }
+//     }
+//     cout << "this numbers appears " << count << " times";
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// using namespace std;
+
+// int main()
+// {
+//     int count = 0, arrSize;
+//     string userString;
+
+//     cout << "enter the size of your array:\n";
+//     cin >> arrSize;
+
+//     const int ARR_SIZE = arrSize;
+
+//     string *stringArray = new string[ARR_SIZE];
+
+//     cout << "enter the strings you want in the array:\n";
+//     for (int i = 0; i < ARR_SIZE; i++)
+//     {
+//         cin >> stringArray[i];
+//     }
+
+//     cout << "please enter a number and we will check how many times it appears in an array:\n";
+//     cin >> userString;
+
+//     for (int i = 0; i < ARR_SIZE; i++)
+//     {
+//         if (stringArray[i] == userString)
+//         {
+//             count++;
+//         }
+//     }
+//     cout << "this numbers appears " << count << " times";
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// using namespace std;
+
+// int countFunc(int numArray[], int ARR_SIZE, int userNum) {
+//     int count;
+//     for (int i = 0; i < ARR_SIZE; i++)
+//     {
+//         if (numArray[i] == userNum)
+//         {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// int main()
+// {
+//     int userNum, arrSize, count;
+
+//     cout << "enter the size of your array: ";
+//     cin >> arrSize;
+
+//     const int ARR_SIZE = arrSize;
+
+//     int *numArray = new int[ARR_SIZE];
+
+//     cout << "enter the values you want in the array: ";
+//     for (int i = 0; i < ARR_SIZE; i++)
+//     {
+//         cin >> numArray[i];
+//     }
+
+//     cout << "please enter a number and we will check how many times it appears in an array:\n";
+//     cin >> userNum;
+
+//     count = countFunc(numArray, ARR_SIZE, userNum);
+
+//     cout << "this numbers appears " << count << " times";
+//     return 0;
+// }
+
 #include <iostream>
-#include <iomanip>
-#include <string>
-#include <cstring>
 using namespace std;
 
 int main()
 {
-    int userNum,
-        sum = 0,
-        condition = 0;
+    int numOne, numTwo, sum = 0;
 
-    cout << "Please enter a positive number: ";
-    cin >> userNum;
+    cout << "this program will get the sum of all the integers between two given numbers. Please enter the first number: ";
+    cin >> numOne;
 
-    while (condition == 0)
+    cout << "please enter your second number: ";
+    cin >> numTwo;
+
+    for (int i = numOne; i <= numTwo; i++)
     {
-
-        if (userNum > 0)
-        {
-            condition++;
-            for (int i = 0; i < userNum; i++)
-            {
-                sum += i;
-            }
-            cout << "your sum is: " << sum;
-        }
-        else
-        {
-            cout << "Please enter a positive number: ";
-            cin >> userNum;
-        }
+        sum += i;
     }
+    cout << "your sum is: " << sum;
+}
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numOne, numTwo, sum = 0;
+
+    cout << "this program will get the sum of all the integers between two given numbers. Please enter the first number: ";
+    cin >> numOne;
+
+    cout << "please enter your second number: ";
+    cin >> numTwo;
+
+    for (int i = numOne; i <= numTwo; i++)
+    {
+        sum += i;
+    }
+    cout << "your sum is: " << sum;
 }
