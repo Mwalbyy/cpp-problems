@@ -1115,42 +1115,167 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int numOne, numTwo, sum = 0;
+
+//     cout << "this program will get the sum of all the integers between two given numbers. Please enter the first number: ";
+//     cin >> numOne;
+
+//     cout << "please enter your second number: ";
+//     cin >> numTwo;
+
+//     for (int i = numOne; i <= numTwo; i++)
+//     {
+//         sum += i;
+//     }
+//     cout << "your sum is: " << sum;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int startI, endI, arrSize, sum = 0;
+
+//     cout << "how large do you want your sum array to be? :";
+//     cin >> arrSize;
+
+//     const int ARR_SIZE = arrSize;
+
+//     int *sumArray = new int[ARR_SIZE];
+
+//     for (int i = 0; i <= ARR_SIZE; i++)
+//     {
+//         sumArray[i] = (i + 1);
+//     }
+
+//     cout << "Please enter the starting index: ";
+//     cin >> startI;
+
+//     cout << "Please enter the ending index: ";
+//     cin >> endI;
+
+//     for (int i = sumArray[startI]; i <= endI + 1; i++)
+//     {
+//         sum += i;
+//         cout << sum;
+//     }
+//     if (sum == 0)
+//     {
+//         cout << "Use indexes within your array length to receive a positive integer";
+//     }
+//     else
+//     {
+//         cout << "your sum is: " << sum;
+//     }
+// }
+// #include <iostream>
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int speed, time;
+
+//     cout << "How fast are you traveling? ";
+//     cin >> speed;
+
+//     if (speed < 0)
+//     {
+//         cout << "enter a positive number for your speed";
+//         return 0;
+//     }
+
+//     cout << "How many hours are you traveling for? ";
+//     cin >> time;
+
+//     if (time < 1)
+//     {
+//         cout << "enter at least 1 for your time traveled";
+//         return 0;
+//     }
+
+//     cout << "\nHour";
+//     cout << setw(35) << "Distance Traveled";
+//     cout << "\n----------------------------------------\n";
+
+//     for (int i = 1; i <= time; i++)
+//     {
+//         cout << i;
+//         cout << setw(35) << i * speed << '\n';
+//     }
+// }
+
+// #include <iomanip>
+// #include <string>
+// #include <cstring>
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int const SIZE = 5;
+//     int numArray[SIZE], minIndex = 0, maxIndex = 0;
+
+//     cout << "please enter 5 values for the array:\n";
+//     for (int i = 0; i < SIZE; i++)
+//     {
+//         cin >> numArray[i];
+//     }
+
+//     for (int i = 0; i < SIZE; i++)
+//     {
+
+//         if (numArray[minIndex] > numArray[i])
+//         {
+//             minIndex = i;
+//         };
+//     }
+//     cout << "smallest value is: " << numArray[minIndex];
+
+//     for (int i = 0; i < SIZE; i++)
+//     {
+//         if (numArray[maxIndex] < numArray[i])
+//         {
+//             maxIndex = i;
+//         };
+//     }
+//     cout << "\nlargest value is: " << numArray[maxIndex];
+// }
+
+#include <iomanip>
+#include <string>
+#include <cstring>
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int numOne, numTwo, sum = 0;
+    int const SIZE = 10;
+    int numArray[SIZE], userValue, lessThan = 0;
 
-    cout << "this program will get the sum of all the integers between two given numbers. Please enter the first number: ";
-    cin >> numOne;
-
-    cout << "please enter your second number: ";
-    cin >> numTwo;
-
-    for (int i = numOne; i <= numTwo; i++)
+    cout << "please enter 10 values for the array:\n";
+    for (int i = 0; i < SIZE; i++)
     {
-        sum += i;
+        cin >> numArray[i];
     }
-    cout << "your sum is: " << sum;
-}
+    cout << "please enter a target value:\n";
+    cin >> userValue;
 
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    int numOne, numTwo, sum = 0;
-
-    cout << "this program will get the sum of all the integers between two given numbers. Please enter the first number: ";
-    cin >> numOne;
-
-    cout << "please enter your second number: ";
-    cin >> numTwo;
-
-    for (int i = numOne; i <= numTwo; i++)
+    for (int i = 0; i < SIZE; i++)
     {
-        sum += i;
+        if (userValue > numArray[i])
+        {
+            lessThan++;
+        }
     }
-    cout << "your sum is: " << sum;
+    cout << "small occurrences: " << lessThan;
 }
